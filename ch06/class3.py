@@ -1,6 +1,6 @@
 class Vehicle:
     def __init__(self,name,engine):
-        self.__name=name
+        self.__name=name##__私有存取，private的存取權限，只有在該類別方法才能存取
         self.__engine=engine
 
     def getName(self):
@@ -35,5 +35,6 @@ class Car(Vehicle,Electric):
         return self.__Auto
 
 myCar = Car("特斯拉","磁電引擎","電力","自動駕駛車")
-myCar.getCarName()
+# print(myCar)
+# myCar.getCarName()
 myCar.getAuto()
