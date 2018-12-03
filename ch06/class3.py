@@ -23,7 +23,7 @@ class Electric:
 class Car(Vehicle,Electric):
     def __init__(self,name,engine,PowerElectric,auto):
         super().__init__(name,engine)
-        self.setPower(PowerElectric)  
+        self.setPower(PowerElectric)#####只是將setPower設定給Car裡面的Electric的屬性，把他設進來
         self.__Auto=auto
 
     def getCarName(self):
@@ -36,5 +36,5 @@ class Car(Vehicle,Electric):
 
 myCar = Car("特斯拉","磁電引擎","電力","自動駕駛車")
 # print(myCar)
-# myCar.getCarName()
-myCar.getAuto()
+myCar.getCarName()
+# myCar.getAuto()
