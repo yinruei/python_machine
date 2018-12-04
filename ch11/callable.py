@@ -6,7 +6,7 @@ df1 = pd.DataFrame(np.random.randn(6,4),
 
 print(df1)
 print('-------------------------------')
-df2 = df1.loc[lambda df1: df1.A > 0, :]
+df2 = df1.loc[lambda df1: df1.A > 0,:]
 # print(df2)
 
 df3 = df1.loc[:, lambda df1: ['A','B']]
