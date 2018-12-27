@@ -11,11 +11,10 @@
 因為python解釋器會自動為你考慮這一點。
 '''
 
-import sys
-import os
-print(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-sys.path.append('C:\\Users\\yinruei\\Desktop\\python機器學習\\python_machine\\Head_first_python')
-# import nester
+import sys, os
+import pickle
+abs_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(abs_path)
 from nester import nester
 
 man = []
@@ -38,11 +37,15 @@ except IOError:
     print('The datafile is missing!')
 
 try:
-    with open('man_data.txt','w') as man_file:
-        nester.print_lol(man, fn = man_file)
+    with open('man_data.txt','wb') as man_file:
+        # nester.print_lol(man, fn = man_file)
+        pickle.dump(man, man_file )
         # print(man, file=man_file)
-    with open('other_data.txt','w') as other_file:
-        nester.print_lol(other, fn = other_file)
+    with open('other_data.txt','wb') as other_file:
+        # nester.print_lol(other, fn = other_file)
+        pickle.dump(other, other_file )
         # print(other, file=other_file)
 except IOError as err:
     print('File error: '+ str(err))
+except pickle.PickleError as perr:
+    print('Pickling error: '+str(perr))
