@@ -7,6 +7,8 @@ class Car():
         self.odometer_reading = 0
     def get_descriptive_name(self):
         long_name = str(self.year) + ' ' + self.make + ' ' + self.model
+        # print(dir(long_name))
+        # print(long_name.title())
         return long_name.title()
     def read_odometer(self):
         print("This car has " + str(self.odometer_reading) + " miles on it.")
